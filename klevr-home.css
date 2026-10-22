@@ -1,0 +1,839 @@
+/* KLEVR Lab front page styles. Every rule starts with .klevr-home, so nothing else on the guide changes.
+   Loaded from the guide's custom code box (see libguides-custom-code.html). */
+
+/* ===== [COLORS] Design tokens. Change values here only. ===== */
+.klevr-home {
+  --kh-blue: #0055a2; /* SJSU Library blue. White text on it passes AA. */
+  --kh-blue-dark: #00437f;
+  --kh-font: Calibri, Carlito, 'Helvetica Neue', Arial, sans-serif;
+  --kh-gold: #e5a823; /* Accent only: rules and borders, never text. */
+  --kh-line: #d4d4d4;
+  --kh-muted: #4a4a4a;
+  --kh-text: #1a1a1a;
+  --kh-tint: #f4f6f9;
+  box-sizing: border-box;
+  color: var(--kh-text);
+  font-family: var(--kh-font);
+  font-size: 1.0625rem;
+  line-height: 1.55;
+  max-width: 100%;
+}
+
+.klevr-home *,
+.klevr-home *::before,
+.klevr-home *::after {
+  box-sizing: border-box;
+}
+
+/* Headings keep the site's own heading font and sizes (the SJSU stylesheet sets them), so this
+   component only controls color, line height and spacing. Body text uses --kh-font.
+   Heading levels: this box has no LibGuides box title, so the h2 below is the box heading, sections are h3
+   and items are h4. Never use h1 (the page title) here. */
+.klevr-home h2,
+.klevr-home h3,
+.klevr-home h4 {
+  color: var(--kh-text);
+  line-height: 1.2;
+}
+
+.klevr-home h2 {
+  margin: 0 0 0.6rem;
+}
+
+.klevr-home h3 {
+  margin: 0 0 0.75rem;
+}
+
+.klevr-home h4 {
+  margin: 0 0 0.25rem;
+}
+
+.klevr-home p {
+  margin: 0 0 0.75rem;
+}
+
+.klevr-home ul {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+.klevr-home li {
+  margin-bottom: 0.25rem;
+}
+
+.klevr-home a {
+  color: var(--kh-blue);
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+.klevr-home a:hover {
+  text-decoration-thickness: 2px;
+}
+
+.klevr-home a:focus-visible,
+.klevr-home button:focus-visible {
+  outline: 3px solid var(--kh-blue);
+  outline-offset: 2px;
+}
+
+/* ===== Intro ===== */
+.klevr-home .kh-intro {
+  border-bottom: 4px solid var(--kh-gold);
+  margin-bottom: 1.25rem;
+  padding-bottom: 1rem;
+}
+
+.klevr-home .kh-intro p {
+  margin-bottom: 0.5rem;
+  max-width: 42rem;
+}
+
+.klevr-home .kh-intro p:last-child {
+  margin-bottom: 0;
+}
+
+.klevr-home .kh-strip ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.klevr-home .kh-strip {
+  background: var(--kh-tint);
+  border-left: 4px solid var(--kh-blue);
+  color: var(--kh-text);
+  margin: 0 0 1.5rem;
+  padding: 0.7rem 1rem;
+}
+
+.klevr-home .kh-strip ul {
+  font-size: 1rem;
+  font-weight: 700;
+  gap: 0.1rem 0;
+}
+
+.klevr-home .kh-strip li {
+  margin: 0;
+}
+
+.klevr-home .kh-strip li + li::before {
+  color: var(--kh-blue);
+  content: '/' / '';
+  opacity: 0.45;
+  padding: 0 0.6rem;
+}
+
+.klevr-home .kh-lead {
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.klevr-home .kh-quick ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.5rem;
+  list-style: none;
+  margin: 0.75rem 0 0;
+  padding: 0;
+}
+
+.klevr-home .kh-quick li {
+  margin: 0;
+}
+
+.klevr-home .kh-quick a {
+  display: inline-block;
+  font-weight: 700;
+  padding: 0.4rem 0;
+}
+
+.klevr-home [id] {
+  scroll-margin-top: 0.75rem;
+}
+
+/* ===== Rows: everything wraps on its own, no fixed widths ===== */
+.klevr-home .kh-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem 2rem;
+  margin-bottom: 2rem;
+}
+
+/* Hero photo + hours */
+.klevr-home .kh-top {
+  align-items: stretch;
+  gap: 1.5rem 2rem;
+}
+
+.klevr-home .kh-hours:only-child {
+  max-width: 32rem;
+}
+
+/* no photo yet: keep the hours panel a sensible width */
+.klevr-home .kh-hours-photo {
+  flex: 2 1 20rem;
+  margin: 0;
+  min-height: 13rem;
+  min-width: 0;
+  position: relative;
+}
+
+.klevr-home .kh-hours-photo img {
+  display: block;
+  height: 100%;
+  inset: 0;
+  object-fit: cover;
+  object-position: 60% 40%;
+  position: absolute;
+  width: 100%;
+}
+
+.klevr-home .kh-banner {
+  margin: 0 0 1.25rem;
+}
+
+.klevr-home .kh-banner img {
+  aspect-ratio: 21 / 9;
+  display: block;
+  height: auto;
+  object-fit: cover;
+  object-position: 50% 24%;
+  width: 100%;
+}
+
+.klevr-home .kh-banner figcaption {
+  color: var(--kh-muted);
+  font-size: 0.9rem;
+  margin-top: 0.3rem;
+}
+
+.klevr-home .kh-hours {
+  background: var(--kh-blue);
+  border-top: 6px solid var(--kh-gold);
+  color: #fff;
+  flex: 1 1 16rem;
+  min-width: 0;
+  padding: 1rem 1.1rem 1.1rem;
+}
+
+.klevr-home .kh-hours h3 {
+  color: #fff;
+  margin-bottom: 0.25rem;
+}
+
+.klevr-home .kh-hours table {
+  border-collapse: collapse;
+  margin: 0.5rem 0 0.75rem;
+  width: 100%;
+}
+
+.klevr-home .kh-hours caption {
+  caption-side: top;
+  color: #fff;
+  font-size: 0.95rem;
+  padding: 0;
+  text-align: left;
+}
+
+.klevr-home .kh-hours th,
+.klevr-home .kh-hours td {
+  border-top: 1px solid rgba(255, 255, 255, 0.45);
+  font-weight: 400;
+  padding: 0.4rem 0.5rem 0.4rem 0;
+  text-align: left;
+  vertical-align: top;
+}
+
+.klevr-home .kh-hours th {
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.klevr-home .kh-hours p {
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+.klevr-home .kh-notice {
+  background: rgba(255, 255, 255, 0.14);
+  border-left: 6px solid var(--kh-gold);
+  font-size: 0.95rem;
+  margin: 0 0 0.75rem;
+  padding: 0.5rem 0.7rem;
+}
+
+/* ===== [HEADSET] "Under the hood" section: text beside a 3D model of a Quest 3 ===== */
+.klevr-home .kh-tech {
+  --kh-hl-deep: #5f9be0; /* X-ray view: lines toward the back of the model */
+  --kh-hl-hot: #e5a823; /* hover highlight and leader dots (SJSU gold) */
+  --kh-hl-key: #fff; /* parts that get callouts */
+  --kh-hl-line: #cfe2ff; /* drawing line colour */
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.klevr-home .kh-tech-text {
+  flex: 1 1 16rem;
+  min-width: 0;
+}
+
+.klevr-home .kh-tech-text h3 {
+  margin: 0 0 0.5rem;
+}
+
+.klevr-home .kh-tech-text p {
+  margin: 0 0 0.75rem;
+}
+
+.klevr-home .kh-tech-text p.kh-tech-eyebrow {
+  color: var(--kh-muted);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  margin: 0 0 0.35rem;
+  text-transform: uppercase;
+}
+
+.klevr-home .kh-vw {
+  flex: 2 1 22rem;
+  min-width: 0;
+}
+
+.klevr-home .kh-vw-stage {
+  aspect-ratio: 4 / 3;
+  background: radial-gradient(ellipse 70% 65% at 50% 48%, #0a66b8 0%, var(--kh-blue) 55%, var(--kh-blue-dark) 100%);
+  border-top: 6px solid var(--kh-gold);
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 28px), calc(100% - 28px) 100%, 0 100%); /* cut corner */
+  color: #fff;
+  cursor: grab;
+  overflow: hidden;
+  position: relative;
+  touch-action: pan-y; /* vertical swipes still scroll the page */
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.klevr-home .kh-vw-stage.kh-drag {
+  cursor: grabbing;
+}
+
+/* gold corner brackets and a soft inner light, drawn once, no per-frame cost */
+.klevr-home .kh-vw-stage::before {
+  --b: rgba(229, 168, 35, 0.9);
+  background:
+      linear-gradient(var(--b), var(--b)) top left / 22px 2px no-repeat,
+      linear-gradient(var(--b), var(--b)) top left / 2px 22px no-repeat,
+      linear-gradient(var(--b), var(--b)) top right / 22px 2px no-repeat,
+      linear-gradient(var(--b), var(--b)) top right / 2px 22px no-repeat,
+      linear-gradient(var(--b), var(--b)) bottom left / 22px 2px no-repeat,
+      linear-gradient(var(--b), var(--b)) bottom left / 2px 22px no-repeat;
+  box-shadow: inset 0 0 80px rgba(120, 190, 255, 0.12);
+  content: '';
+  inset: 10px;
+  pointer-events: none;
+  position: absolute;
+  z-index: 1;
+}
+
+/* one scan pass when the view changes */
+.klevr-home .kh-vw-stage::after {
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(160, 210, 255, 0.28) 70%, rgba(229, 168, 35, 0.9) 100%);
+  bottom: 0;
+  content: '';
+  left: 0;
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  transform: translateX(-100%);
+  width: 90px;
+  z-index: 1;
+}
+
+.klevr-home .kh-vw-stage.kh-scan::after {
+  animation: kh-scan 0.9s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes kh-scan {
+  0% {
+    opacity: 1;
+    transform: translateX(-100%);
+  }
+
+  90% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateX(calc(var(--kh-w, 600px) + 100%));
+  }
+}
+
+.klevr-home .kh-vw-title::before {
+  animation: kh-pulse 2.4s ease-in-out 2;
+  background: var(--kh-gold);
+  content: '';
+  display: inline-block;
+  height: 7px;
+  margin-right: 0.55rem;
+  vertical-align: 1px;
+  width: 7px;
+}
+
+@keyframes kh-pulse {
+  50% {
+    opacity: 0.25;
+  }
+}
+
+.klevr-home .kh-vw-leaders {
+  height: 100%;
+  inset: 0;
+  pointer-events: none;
+  position: absolute;
+  width: 100%;
+  z-index: 2;
+}
+
+.klevr-home .kh-vw-poster {
+  height: 100%;
+  inset: 0;
+  object-fit: contain;
+  position: absolute;
+  width: 100%;
+}
+
+.klevr-home .kh-vw-poster[hidden] {
+  display: none;
+}
+
+.klevr-home .kh-vw-canvas {
+  display: block;
+  height: 100%;
+  inset: 0;
+  position: absolute;
+  width: 100%;
+}
+
+.klevr-home .kh-vw-leaders polyline {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.85);
+  stroke-width: 1;
+}
+
+.klevr-home .kh-vw-leaders circle {
+  fill: var(--kh-hl-hot);
+}
+
+.klevr-home .kh-vw-leaders polyline.h {
+  stroke-dasharray: 3 3;
+}
+
+.klevr-home .kh-vw-leaders circle.h {
+  fill: none;
+  stroke: var(--kh-hl-hot);
+  stroke-width: 1.5;
+}
+
+.klevr-home .kh-vw-label {
+  align-items: center;
+  background: #fff;
+  border-left: 3px solid var(--kh-gold);
+  clip-path: polygon(0 0, 100% 0, calc(100% - 7px) 100%, 0 100%);
+  color: var(--kh-text);
+  display: flex;
+  font-size: 0.75rem;
+  font-weight: 700;
+  height: 20px;
+  letter-spacing: 0.06em;
+  line-height: 1;
+  padding: 0 0.45rem;
+  padding-right: 0.7rem;
+  pointer-events: none;
+  position: absolute;
+  text-transform: uppercase;
+  white-space: nowrap;
+  z-index: 2;
+}
+
+.klevr-home .kh-vw-label-hidden {
+  background: rgba(255, 255, 255, 0.7);
+  border-left-color: rgba(229, 168, 35, 0.6);
+}
+
+.klevr-home .kh-vw-readout {
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  left: 16px;
+  letter-spacing: 0.08em;
+  margin: 0;
+  min-height: 1em;
+  pointer-events: none;
+  position: absolute;
+  text-transform: uppercase;
+  top: 14px;
+  z-index: 3;
+}
+
+.klevr-home .kh-vw-title {
+  bottom: 12px;
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 700;
+  left: 16px;
+  letter-spacing: 0.08em;
+  pointer-events: none;
+  position: absolute;
+  text-transform: uppercase;
+  z-index: 3;
+}
+
+.klevr-home .kh-vw-title span + span::before {
+  color: var(--kh-gold);
+  content: '/';
+  padding: 0 0.5rem;
+}
+
+.klevr-home .kh-sr,
+.klevr-home .kh-vw-status {
+  clip-path: inset(50%);
+  height: 1px;
+  margin: 0;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.klevr-home .kh-vw-controls {
+  display: none;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.klevr-home .kh-vw-ready .kh-vw-controls {
+  display: flex;
+}
+
+.klevr-home .kh-tech .kh-btn {
+  background: #fff;
+  border: 2px solid var(--kh-blue);
+  color: var(--kh-blue);
+  cursor: pointer;
+  font: 700 0.95rem/1.2 var(--kh-font);
+  min-height: 2.75rem;
+  padding: 0.5rem 0.9rem;
+}
+
+.klevr-home .kh-tech .kh-btn:hover {
+  background: var(--kh-tint);
+}
+
+.klevr-home .kh-tech .kh-btn[data-kh='explode'] {
+  background: var(--kh-blue);
+  color: #fff;
+}
+
+.klevr-home .kh-tech .kh-btn[data-kh='explode']:hover {
+  background: var(--kh-blue-dark);
+  border-color: var(--kh-blue-dark);
+}
+
+.klevr-home .kh-tech .kh-btn:disabled {
+  cursor: default;
+  opacity: 0.5;
+}
+
+/* view switch */
+.klevr-home .kh-vw-modes {
+  display: none;
+  margin-top: 0.75rem;
+}
+
+.klevr-home .kh-vw-ready .kh-vw-modes {
+  display: flex;
+}
+
+.klevr-home .kh-vw-modes button {
+  background: #fff;
+  border: 2px solid var(--kh-blue);
+  color: var(--kh-blue);
+  cursor: pointer;
+  font: 700 0.9rem/1.2 var(--kh-font);
+  min-height: 2.5rem;
+  padding: 0.4rem 0.9rem;
+}
+
+.klevr-home .kh-vw-modes button + button {
+  border-left: 0;
+}
+
+.klevr-home .kh-vw-modes button:hover {
+  background: var(--kh-tint);
+}
+
+.klevr-home .kh-vw-modes button[aria-pressed='true'] {
+  background: var(--kh-blue);
+  box-shadow: inset 0 -4px 0 var(--kh-gold);
+  color: #fff;
+}
+
+.klevr-home .kh-vw-modes button:disabled {
+  cursor: default;
+  opacity: 0.5;
+}
+
+/* Services */
+.klevr-home .kh-services {
+  container: kh-sv / inline-size;
+  flex: 1 1 100%;
+  min-width: 0;
+}
+
+.klevr-home .kh-service-list {
+  display: grid;
+  gap: 1rem 2rem;
+  grid-template-columns: minmax(0, 1fr);
+}
+
+@container kh-sv (min-width: 34rem) {
+  .klevr-home .kh-service-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.klevr-home .kh-service {
+  border-left: 3px solid var(--kh-blue);
+  min-width: 0;
+  padding: 0.25rem 0 0.5rem 1rem;
+}
+
+.klevr-home .kh-service p {
+  margin: 0;
+}
+
+.klevr-home a.kh-cta {
+  background: var(--kh-blue);
+  border: 2px solid var(--kh-blue);
+  color: #fff;
+  display: inline-block;
+  font-weight: 700;
+  min-height: 2.75rem;
+  padding: 0.6rem 1.1rem;
+  text-decoration: none;
+}
+
+.klevr-home a.kh-cta:hover {
+  background: var(--kh-blue-dark);
+  border-color: var(--kh-blue-dark);
+}
+
+.klevr-home a.kh-cta-alt {
+  background: #fff;
+  color: var(--kh-blue);
+}
+
+.klevr-home a.kh-cta-alt:hover {
+  background: var(--kh-tint);
+  border-color: var(--kh-blue);
+}
+
+.klevr-home .kh-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+}
+
+.klevr-home .kh-idea {
+  margin: 1rem 0 0;
+  max-width: 42rem;
+}
+
+.klevr-home .kh-feature {
+  border: 1px solid var(--kh-line);
+  border-left: 6px solid var(--kh-blue);
+  flex: 1 1 100%;
+  padding: 0.75rem 1rem;
+}
+
+.klevr-home .kh-feature .kh-when {
+  color: var(--kh-blue);
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin: 0 0 0.25rem;
+}
+
+.klevr-home .kh-feature h3 {
+  margin-bottom: 0.25rem;
+}
+
+.klevr-home .kh-feature p:last-child {
+  margin-bottom: 0;
+}
+
+/* ===== Video: loads nothing from YouTube until clicked ===== */
+.klevr-home .kh-video {
+  flex: 1 1 100%;
+  max-width: 40rem;
+}
+
+.klevr-home .kh-video-frame {
+  aspect-ratio: 16 / 9;
+  background: var(--kh-text);
+  position: relative;
+}
+
+.klevr-home .kh-video-frame iframe {
+  border: 0;
+  height: 100%;
+  inset: 0;
+  position: absolute;
+  width: 100%;
+}
+
+.klevr-home .kh-video-play {
+  align-items: center;
+  background: var(--kh-blue);
+  border: 0;
+  border-bottom: 6px solid var(--kh-gold);
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  font: 700 1.1rem/1.3 var(--kh-font);
+  inset: 0;
+  justify-content: center;
+  padding: 1rem;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+}
+
+.klevr-home .kh-video-play:hover {
+  background: var(--kh-blue-dark);
+}
+
+.klevr-home .kh-video-fallback {
+  font-size: 0.9rem;
+  margin: 0.4rem 0 0;
+}
+
+/* ===== Photos ===== */
+.klevr-home .kh-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  list-style: none;
+  margin: 0 0 2rem;
+  padding: 0;
+}
+
+.klevr-home .kh-gallery > li {
+  flex: 1 1 14rem;
+  margin: 0;
+  min-width: 0;
+}
+
+.klevr-home .kh-gallery figure {
+  margin: 0;
+}
+
+.klevr-home .kh-gallery img {
+  aspect-ratio: 4 / 3;
+  display: block;
+  height: auto;
+  object-fit: cover;
+  object-position: 50% 35%;
+  width: 100%;
+}
+
+.klevr-home .kh-gallery figcaption {
+  color: var(--kh-muted);
+  font-size: 0.9rem;
+  margin-top: 0.3rem;
+}
+
+/* ===== Equipment: equal-width groups. Photos share one aspect ratio and headings stay on one line,
+   so groups in the same row line up without relying on any fancy grid feature. ===== */
+.klevr-home .kh-equipment {
+  container: kh-eq / inline-size;
+  margin-bottom: 2rem;
+}
+
+.klevr-home .kh-groups {
+  display: grid;
+  gap: 1.75rem 2rem;
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.klevr-home .kh-group {
+  border-top: 2px solid var(--kh-text);
+  min-width: 0;
+  padding-top: 0.75rem;
+}
+
+.klevr-home .kh-group ul {
+  list-style: none;
+  padding: 0;
+}
+
+.klevr-home .kh-group li {
+  border-top: 1px solid var(--kh-line);
+  margin: 0;
+  padding: 0.35rem 0;
+}
+
+.klevr-home .kh-shot {
+  aspect-ratio: 16 / 10;
+  display: block;
+  height: auto;
+  margin-bottom: 0.75rem;
+  object-fit: cover;
+  width: 100%;
+}
+
+@container kh-eq (min-width: 34rem) {
+  .klevr-home .kh-groups {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@container kh-eq (min-width: 66rem) {
+  .klevr-home .kh-groups {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+/* ===== Visit ===== */
+.klevr-home .kh-visit {
+  border-top: 2px solid var(--kh-text);
+  padding-top: 0.75rem;
+}
+
+.klevr-home .kh-visit ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.75rem;
+  list-style: none;
+  padding: 0;
+}
+
+.klevr-home .kh-visit li {
+  margin: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .klevr-home .kh-vw-stage::after,
+  .klevr-home .kh-vw-title::before {
+    animation: none;
+  }
+}
