@@ -605,6 +605,33 @@
   grid-template-columns: minmax(0, 1fr);
 }
 
+/* Workshops and learning resources: same cards as Services, in three columns when wide */
+.klevr-home .kh-learn {
+  container: kh-ln / inline-size;
+  flex: 1 1 100%;
+  min-width: 0;
+}
+
+.klevr-home .kh-learn > p {
+  max-width: 42rem;
+}
+
+@container kh-ln (min-width: 34rem) {
+  .klevr-home .kh-learn .kh-service-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@container kh-ln (min-width: 52rem) {
+  .klevr-home .kh-learn .kh-service-list {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.klevr-home .kh-learn .kh-actions {
+  margin-top: 1rem;
+}
+
 @container kh-sv (min-width: 34rem) {
   .klevr-home .kh-service-list {
     grid-template-columns: repeat(2, minmax(0, 1fr));
