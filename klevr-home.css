@@ -543,6 +543,11 @@
   border-color: var(--kh-blue-dark);
 }
 
+.klevr-home .kh-tech .kh-btn[aria-disabled='true'] {
+  cursor: default;
+  opacity: 0.55;
+}
+
 .klevr-home .kh-tech .kh-btn:disabled {
   cursor: default;
   opacity: 0.5;
