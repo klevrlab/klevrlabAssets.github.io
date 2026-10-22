@@ -846,13 +846,6 @@
   overflow-wrap: anywhere;
 }
 
-.klevr-home .kh-visit-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem 1.5rem;
-  margin: 0;
-}
-
 @media (prefers-reduced-motion: reduce) {
   .klevr-home .kh-vw-stage::after,
   .klevr-home .kh-vw-title::before {
