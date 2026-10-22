@@ -600,14 +600,17 @@
   grid-template-columns: minmax(0, 1fr);
 }
 
-/* Workshops and learning resources: sits beside the video, one card per row */
+/* Workshops and learning resources: below the video, cards in a row when there is room */
 .klevr-home .kh-learn {
-  flex: 1 1 20rem;
+  container: kh-ln / inline-size;
+  flex: 1 1 100%;
   min-width: 0;
 }
 
-.klevr-home .kh-learn .kh-service-list {
-  grid-template-columns: minmax(0, 1fr);
+@container kh-ln (min-width: 34rem) {
+  .klevr-home .kh-learn .kh-service-list {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
 }
 
 .klevr-home .kh-learn .kh-actions {
@@ -693,7 +696,8 @@
 
 /* ===== Video: loads nothing from YouTube until clicked ===== */
 .klevr-home .kh-video {
-  flex: 1 1 26rem;
+  flex: 1 1 100%;
+  max-width: 64rem;
   min-width: 0;
 }
 
