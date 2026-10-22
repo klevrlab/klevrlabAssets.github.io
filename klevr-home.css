@@ -614,7 +614,7 @@
   margin-top: 1rem;
 }
 
-@container kh-sv (min-width: 34rem) {
+@container kh-sv (min-width: 28rem) {
   .klevr-home .kh-service-list {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -741,14 +741,14 @@
 .klevr-home .kh-gallery {
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 0.75rem;
   list-style: none;
   margin: 0 0 2rem;
   padding: 0;
 }
 
 .klevr-home .kh-gallery > li {
-  flex: 1 1 14rem;
+  flex: 1 1 9rem;
   margin: 0;
   min-width: 0;
 }
@@ -811,7 +811,7 @@
   width: 100%;
 }
 
-@container kh-eq (min-width: 34rem) {
+@container kh-eq (min-width: 28rem) {
   .klevr-home .kh-groups {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -832,7 +832,7 @@
 .klevr-home .kh-visit-list {
   display: grid;
   gap: 0.75rem;
-  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
   margin: 0.75rem 0;
 }
 
