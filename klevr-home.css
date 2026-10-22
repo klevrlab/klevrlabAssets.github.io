@@ -600,23 +600,6 @@
   grid-template-columns: minmax(0, 1fr);
 }
 
-/* Workshops and learning resources: below the video, cards in a row when there is room */
-.klevr-home .kh-learn {
-  container: kh-ln / inline-size;
-  flex: 1 1 100%;
-  min-width: 0;
-}
-
-@container kh-ln (min-width: 34rem) {
-  .klevr-home .kh-learn .kh-service-list {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-}
-
-.klevr-home .kh-learn .kh-actions {
-  margin-top: 1rem;
-}
-
 @container kh-sv (min-width: 28rem) {
   .klevr-home .kh-service-list {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -860,8 +843,8 @@
   overflow-wrap: anywhere;
 }
 
-/* ===== Projects band ===== */
-.klevr-home .kh-projects {
+/* ===== Band: Projects, Workshops ===== */
+.klevr-home .kh-band {
   align-items: center;
   background: var(--kh-tint);
   border-left: 6px solid var(--kh-gold);
@@ -873,11 +856,11 @@
   padding: 0.75rem 1rem;
 }
 
-.klevr-home .kh-projects h3 {
+.klevr-home .kh-band h3 {
   margin: 0 0 0.125rem;
 }
 
-.klevr-home .kh-projects p {
+.klevr-home .kh-band p {
   margin: 0;
 }
 
