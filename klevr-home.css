@@ -543,6 +543,11 @@
   border-color: var(--kh-blue-dark);
 }
 
+.klevr-home .kh-tech .kh-btn[aria-pressed='true'] {
+  background: var(--kh-blue);
+  color: #fff;
+}
+
 .klevr-home .kh-tech .kh-btn[aria-disabled='true'] {
   cursor: default;
   opacity: 0.55;
