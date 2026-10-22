@@ -596,7 +596,7 @@
 
 .klevr-home .kh-service-list {
   display: grid;
-  gap: 1rem 2rem;
+  gap: 1rem 1.5rem;
   grid-template-columns: minmax(0, 1fr);
 }
 
@@ -622,7 +622,7 @@
 
 @container kh-sv (min-width: 52rem) {
   .klevr-home .kh-services .kh-service-list {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 }
 
@@ -854,6 +854,27 @@
   line-height: 1.45;
   margin: 0.125rem 0 0;
   overflow-wrap: anywhere;
+}
+
+/* ===== Projects band ===== */
+.klevr-home .kh-projects {
+  align-items: center;
+  background: var(--kh-tint);
+  border-left: 6px solid var(--kh-gold);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.5rem;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  padding: 0.75rem 1rem;
+}
+
+.klevr-home .kh-projects h3 {
+  margin: 0 0 0.125rem;
+}
+
+.klevr-home .kh-projects p {
+  margin: 0;
 }
 
 @media (prefers-reduced-motion: reduce) {
