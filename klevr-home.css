@@ -856,3 +856,83 @@
     animation: none;
   }
 }
+
+.klevr-home .kh-vw-label-pin {
+  background: var(--kh-gold);
+  border-left-color: #fff;
+  color: #1a1a1a;
+}
+
+.klevr-home .kh-vw-parts {
+  margin-top: 1rem;
+}
+
+.klevr-home .kh-vw-parts h4 {
+  font-size: 1rem;
+  margin: 0 0 0.25rem;
+}
+
+.klevr-home .kh-tech-text p.kh-vw-parts-hint {
+  font-size: 0.9rem;
+  margin: 0 0 0.5rem;
+}
+
+.klevr-home .kh-vw-parts ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.klevr-home .kh-vw-parts li {
+  margin: 0 0 0.5rem;
+}
+
+.klevr-home .kh-vw-cls {
+  align-items: center;
+  display: flex;
+  font-size: 0.85rem;
+  font-weight: 700;
+  gap: 0.4rem;
+  margin-bottom: 0.2rem;
+}
+
+.klevr-home .kh-vw-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.klevr-home .kh-chip {
+  background: #fff;
+  border: 2px solid var(--kh-blue);
+  border-radius: 1rem;
+  color: var(--kh-blue);
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.85rem;
+  font-weight: 700;
+  min-height: 28px;
+  padding: 0.1rem 0.7rem;
+}
+
+.klevr-home .kh-chip:hover {
+  background: var(--kh-tint, #eef4fb);
+}
+
+.klevr-home .kh-chip[aria-pressed='true'] {
+  background: var(--kh-blue);
+  color: #fff;
+}
+
+.klevr-home .kh-vw-swatch {
+  border: 1px solid #0055a2;
+  border-radius: 2px;
+  display: none;
+  flex: none;
+  height: 0.85rem;
+  width: 0.85rem;
+}
+
+.klevr-home .kh-mode-xray .kh-vw-swatch {
+  display: inline-block;
+}
