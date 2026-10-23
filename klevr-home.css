@@ -484,15 +484,38 @@
   width: 1px;
 }
 
-.klevr-home .kh-vw-controls {
+.klevr-home .kh-vw-main,
+.klevr-home .kh-vw-rotate {
   display: none;
   flex-wrap: wrap;
-  gap: 0.5rem;
+  gap: 0.5rem 0.75rem;
   margin-top: 1rem;
 }
 
-.klevr-home .kh-vw-ready .kh-vw-controls {
+.klevr-home .kh-vw-rotate {
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+
+.klevr-home .kh-vw-ready .kh-vw-main,
+.klevr-home .kh-vw-ready .kh-vw-rotate {
   display: flex;
+}
+
+.klevr-home .kh-vw-main {
+  align-items: center;
+}
+
+.klevr-home .kh-vw-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.klevr-home .kh-vw-rotate .kh-btn {
+  font-size: 0.85rem;
+  min-height: 2.25rem;
+  padding: 0.3rem 0.75rem;
 }
 
 .klevr-home .kh-tech .kh-btn {
@@ -536,11 +559,6 @@
 
 /* view switch */
 .klevr-home .kh-vw-modes {
-  display: none;
-  margin-top: 0.75rem;
-}
-
-.klevr-home .kh-vw-ready .kh-vw-modes {
   display: flex;
 }
 
@@ -867,14 +885,31 @@
   margin-top: 1rem;
 }
 
-.klevr-home .kh-vw-parts h4 {
-  font-size: 1rem;
-  margin: 0 0 0.25rem;
+.klevr-home .kh-vw-parts summary {
+  border: 2px solid var(--kh-blue);
+  color: var(--kh-blue);
+  cursor: pointer;
+  display: inline-block;
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  min-height: 24px;
+  padding: 0.3rem 0.9rem;
+}
+
+.klevr-home .kh-vw-parts[open] summary {
+  background: var(--kh-blue);
+  color: #fff;
+}
+
+.klevr-home .kh-vw-parts summary:focus-visible {
+  outline: 3px solid var(--kh-gold);
+  outline-offset: 2px;
 }
 
 .klevr-home .kh-tech-text p.kh-vw-parts-hint {
-  font-size: 0.9rem;
-  margin: 0 0 0.5rem;
+  font-size: 0.85rem;
+  margin: 0 0 0.4rem;
 }
 
 .klevr-home .kh-vw-parts ul {
@@ -884,35 +919,37 @@
 }
 
 .klevr-home .kh-vw-parts li {
-  margin: 0 0 0.5rem;
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 0.3rem;
+  margin: 0 0 0.35rem;
 }
 
 .klevr-home .kh-vw-cls {
   align-items: center;
   display: flex;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   font-weight: 700;
-  gap: 0.4rem;
-  margin-bottom: 0.2rem;
+  gap: 0.3rem;
+  margin-right: 0.2rem;
 }
 
 .klevr-home .kh-vw-chips {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.35rem;
+  display: contents;
 }
 
 .klevr-home .kh-chip {
   background: #fff;
-  border: 2px solid var(--kh-blue);
+  border: 1.5px solid var(--kh-blue);
   border-radius: 1rem;
   color: var(--kh-blue);
   cursor: pointer;
   font: inherit;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   font-weight: 700;
-  min-height: 28px;
-  padding: 0.1rem 0.7rem;
+  min-height: 24px;
+  padding: 0 0.55rem;
 }
 
 .klevr-home .kh-chip:hover {
