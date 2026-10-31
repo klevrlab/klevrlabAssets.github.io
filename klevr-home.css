@@ -939,3 +939,68 @@
 .klevr-home .kh-honor p:last-child {
   margin-bottom: 0;
 }
+
+/* ===== Upcoming workshops ===== */
+.klevr-home .kh-events {
+  margin-bottom: 1.5rem;
+}
+
+.klevr-home .kh-event-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  list-style: none;
+  margin: 0 0 0.75rem;
+  padding: 0;
+}
+
+.klevr-home .kh-event {
+  background: #fff;
+  border: 1px solid var(--kh-line);
+  border-top: 4px solid var(--kh-gold);
+  display: flex;
+  flex: 1 1 14rem;
+  flex-direction: column;
+  min-width: 0;
+  position: relative;
+}
+
+.klevr-home .kh-event img {
+  aspect-ratio: 478 / 310;
+  display: block;
+  height: auto;
+  object-fit: cover;
+  width: 100%;
+}
+
+.klevr-home .kh-event-body {
+  padding: 0.75rem 0.9rem 0.9rem;
+}
+
+.klevr-home .kh-event h4 {
+  margin: 0 0 0.25rem;
+}
+
+.klevr-home .kh-event h4 a::after {
+  content: '';
+  inset: 0;
+  position: absolute;
+}
+
+.klevr-home .kh-event time {
+  display: block;
+  font-weight: bold;
+}
+
+.klevr-home .kh-event p {
+  margin: 0.25rem 0 0;
+}
+
+.klevr-home .kh-event-place {
+  color: var(--kh-muted);
+}
+
+.klevr-home .kh-event:focus-within {
+  outline: 3px solid var(--kh-blue);
+  outline-offset: 2px;
+}
