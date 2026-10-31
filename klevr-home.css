@@ -1002,6 +1002,16 @@
   font-weight: bold;
 }
 
+.klevr-home .kh-event:hover {
+  box-shadow: 0 15px 26px rgba(0, 0, 0, 0.5);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .klevr-home .kh-event {
+    transition: box-shadow 0.2s ease-in;
+  }
+}
+
 .klevr-home .kh-event:focus-within {
   outline: 3px solid var(--kh-blue);
   outline-offset: 2px;
