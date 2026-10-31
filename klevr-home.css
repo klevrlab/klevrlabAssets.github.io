@@ -948,19 +948,19 @@
 .klevr-home .kh-event-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 0.75rem;
   list-style: none;
-  margin: 0 0 0.75rem;
+  margin: 0 0 0.5rem;
   padding: 0;
 }
 
 .klevr-home .kh-event {
   background: #fff;
   border: 1px solid var(--kh-line);
-  border-top: 4px solid var(--kh-gold);
   display: flex;
-  flex: 1 1 14rem;
+  flex: 1 1 11rem;
   flex-direction: column;
+  max-width: 16rem;
   min-width: 0;
   position: relative;
 }
@@ -974,11 +974,14 @@
 }
 
 .klevr-home .kh-event-body {
-  padding: 0.75rem 0.9rem 0.9rem;
+  font-size: 0.95rem;
+  padding: 0.5rem 0.65rem 0.65rem;
 }
 
 .klevr-home .kh-event h4 {
-  margin: 0 0 0.25rem;
+  font-size: 1rem;
+  line-height: 1.25;
+  margin: 0 0 0.3rem;
 }
 
 .klevr-home .kh-event h4 a::after {
@@ -989,15 +992,14 @@
 
 .klevr-home .kh-event time {
   display: block;
-  font-weight: bold;
 }
 
 .klevr-home .kh-event p {
-  margin: 0.25rem 0 0;
+  margin: 0.3rem 0 0;
 }
 
 .klevr-home .kh-event-place {
-  color: var(--kh-muted);
+  font-weight: bold;
 }
 
 .klevr-home .kh-event:focus-within {

@@ -46,12 +46,15 @@
     return found[0]
   }
 
-  function whenText (inst) {
-    const day = pacific(inst.start, { weekday: 'short', month: 'short', day: 'numeric', year: 'numeric' })
-    if (inst.all_day) return day
+  // Date on one line, time on the next, like the library's other workshop cards.
+  function fillWhen (el, inst) {
+    const date = document.createElement('strong')
+    date.textContent = pacific(inst.start, { weekday: 'short', month: 'short', day: 'numeric', year: 'numeric' })
+    el.appendChild(date)
+    if (inst.all_day) return
     const time = { hour: 'numeric', minute: '2-digit' }
-    const end = inst.end ? ' – ' + pacific(inst.end, time) : ''
-    return day + ', ' + pacific(inst.start, time) + end
+    el.appendChild(document.createElement('br'))
+    el.appendChild(document.createTextNode(pacific(inst.start, time) + (inst.end ? ' – ' + pacific(inst.end, time) : '')))
   }
 
   function cardFor (event, inst) {
@@ -75,18 +78,14 @@
     h.appendChild(a)
     const time = document.createElement('time')
     time.setAttribute('datetime', inst.start)
-    time.textContent = whenText(inst)
+    fillWhen(time, inst)
     const place = document.createElement('p')
     place.className = 'kh-event-place'
     place.textContent = [event.location_name, event.room_number].filter(Boolean).join(', ') ||
       (event.experience === 'virtual' ? 'Online' : '')
-    const text = (event.description_text || '').replace(/\s+/g, ' ').trim()
-    const about = document.createElement('p')
-    about.textContent = text.length > 150 ? text.slice(0, 150).replace(/\s+\S*$/, '') + '…' : text
     body.appendChild(h)
     body.appendChild(time)
     if (place.textContent) body.appendChild(place)
-    if (text) body.appendChild(about)
     li.appendChild(body)
     return li
   }
