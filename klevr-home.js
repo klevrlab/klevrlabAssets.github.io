@@ -68,6 +68,11 @@
       img.height = 310
       img.loading = 'lazy'
       li.appendChild(img)
+    } else {
+      // No photo: a plain tinted block keeps the cards the same height and lined up.
+      const blank = document.createElement('div')
+      blank.className = 'kh-event-blank'
+      li.appendChild(blank)
     }
     const body = document.createElement('div')
     body.className = 'kh-event-body'

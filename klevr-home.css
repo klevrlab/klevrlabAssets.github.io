@@ -825,26 +825,6 @@
 }
 
 /* ===== Band: Workshops ===== */
-.klevr-home .kh-band {
-  align-items: center;
-  background: var(--kh-tint);
-  border-left: 6px solid var(--kh-gold);
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem 1.5rem;
-  justify-content: space-between;
-  margin-bottom: 2rem;
-  padding: 0.75rem 1rem;
-}
-
-.klevr-home .kh-band h3 {
-  margin: 0 0 0.125rem;
-}
-
-.klevr-home .kh-band p {
-  margin: 0;
-}
-
 @media (prefers-reduced-motion: reduce) {
   .klevr-home .kh-vw-stage::after,
   .klevr-home .kh-vw-title::before {
@@ -970,6 +950,13 @@
 /* ===== Upcoming workshops ===== */
 .klevr-home .kh-events {
   margin-bottom: 1.5rem;
+}
+
+.klevr-home .kh-events .kh-actions {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.25rem;
 }
 
 .klevr-home .kh-event-list {
