@@ -71,8 +71,23 @@
   text-decoration-thickness: 2px;
 }
 
-.klevr-home a:focus-visible,
-.klevr-home button:focus-visible {
+/* Stand-alone links keep a 24 px minimum target (WCAG 2.2, 2.5.8). */
+.klevr-home .kh-video-fallback a,
+.klevr-home .kh-events-all,
+.klevr-home .kh-honor a {
+  display: inline-block;
+  min-height: 1.5rem;
+}
+
+/* The library stylesheet sets `a:focus-visible { outline: dotted 1px #000 !important }`, a very thin indicator.
+   !important here is the one deliberate exception, so links get the same clear ring as buttons. */
+.klevr-home a:focus-visible {
+  outline: 3px solid var(--kh-blue) !important;
+  outline-offset: 2px;
+}
+
+.klevr-home button:focus-visible,
+.klevr-home summary:focus-visible {
   outline: 3px solid var(--kh-blue);
   outline-offset: 2px;
 }
@@ -82,14 +97,6 @@
   border-bottom: 4px solid var(--kh-gold);
   margin-bottom: 1.25rem;
   padding-bottom: 1rem;
-}
-
-.klevr-home .kh-logo {
-  display: block;
-  height: auto;
-  margin: 0 0 0.75rem;
-  max-width: 13rem;
-  width: 100%;
 }
 
 .klevr-home .kh-intro p {
@@ -933,10 +940,11 @@
 
 /* ===== Honoring Jon Oakes ===== */
 .klevr-home .kh-honor {
-  border-left: 6px solid var(--kh-gold);
+  background: var(--kh-tint);
+  border-left: 4px solid var(--kh-gold);
   margin: 0 0 2rem;
   max-width: 48rem;
-  padding: 0.25rem 0 0.25rem 1rem;
+  padding: 0.75rem 1rem;
 }
 
 .klevr-home .kh-honor h3 {
